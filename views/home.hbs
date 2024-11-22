@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+</head>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<body class="bg-white">
+
+    <section class="bg-amber-400 relative h-[40vh] flex items-center justify-center px-4 md:px-10">
+        <!-- Background Image on Bottom Right -->
+        <div class="absolute inset-10 bg-cover bg-no-repeat opacity-80 right-0"
+            style="background-image: url('/images/Asset 2.png'); bottom: 0; width: 400px;"></div>
+
+        <!-- Section Content -->
+        <div class="relative z-10 max-w-xl mx-auto text-center flex flex-col items-center justify-center">
+            <!-- Heading -->
+            <h2 class="text-5xl mb-6 text-black">Find your <span class="font-bold text-white">Perfect Place</span></h2>
+
+            <!-- Radio Buttons, Search Input and Button (Horizontal Alignment) -->
+            <div class="bg-white pt-4 pb-2 pr-8 pl-8 rounded-lg shadow-lg">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-6 mb-4">
+                    <!-- Radio Buttons -->
+                    <div class="flex space-x-6 justify-center md:justify-start">
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="search-option"
+                                class="text-yellow-700 border-gray-300 focus:ring-yellow-400" />
+                            <span class="text-black font-bold">Buy</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="search-option"
+                                class="text-yellow-700 border-gray-300 focus:ring-yellow-400" />
+                            <span class="text-black font-bold">Rent</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="search-option"
+                                class="text-yellow-700 border-gray-300 focus:ring-yellow-400" />
+                            <span class="text-black font-bold">Sale</span>
+                        </label>
+                    </div>
+
+                    <!-- Search Input and Button -->
+                    <div class="flex items-center space-x-4 justify-center md:justify-end">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <input type="text" placeholder="Search for property" class="w-64 p-2 border-none text-black" />
+                        <button
+                            class="px-4 py-2 bg-red-600 text-white font-bold rounded hover:bg-red-700 flex justify-between">
+                            <i class="fas fa-search mr-2"></i>Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{!-- <div class="flex flex-wrap gap-2 mt-8 mx-auto container">
+        <!-- First Chip - Dark Yellow with Black Text -->
+        <div class="px-4 py-2 bg-amber-400 text-black font-bold rounded-full">
+            All
+        </div>
+
+        <!-- Remaining Chips - Dark Blue with White Text, Hover Changes to Dark Yellow with Black Text -->
+        <div class="px-4 py-2 bg-blue-900 text-white font-bold rounded-full hover:bg-amber-400 hover:text-black">
+            Appartments
+        </div>
+        <div class="px-4 py-2 bg-blue-900 text-white font-bold rounded-full hover:bg-amber-400 hover:text-black">
+            For Sale
+        </div>
+        <div class="px-4 py-2 bg-blue-900 text-white font-bold rounded-full hover:bg-amber-400 hover:text-black">
+            Recent Properties
+        </div>
+        <div class="px-4 py-2 bg-blue-900 text-white font-bold rounded-full hover:bg-amber-400 hover:text-black">
+            Town House
+        </div>
+
+    </div> --}}
+
+<div class="mt-4">
+    <h2 class="text-3xl text-center font-bold">Latest Listings</h2>
+</div>
+
+
+    {{> properties }}
+
+    <div class="bg-blue-800 text-white flex items-center justify-between px-8 py-6 rounded-lg">
+        <!-- Text Section -->
+        <div class="flex-1">
+            <h2 class="text-3xl font-bold">Want To List your Property?</h2>
+        </div>
+
+        <!-- Button Section -->
+        <div class="flex-shrink-0">
+            <a href="#signup"
+                class="inline-block bg-red-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-red-700 transition duration-300">
+                SignUp Today
+            </a>
+        </div>
+
+        <!-- Image/Icon Section -->
+        <div class="flex-shrink-0 ml-4">
+            <img src="/images/Asset 2.png" alt="For Rent Icon" class="h-16 w-16 object-cover" />
+        </div>
+    </div>
+
+
+
+
+<div class="container mx-auto px-4 py-12">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800">How It Works?</h2>
+        <p class="text-gray-500 mt-2">
+            Discover our simple 4-step process to help you add & manage your property to our platform.
+        </p>
+    </div>
+    <!-- Steps Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 relative">
+            <div class="absolute top-0 right-0 rounded-bl-full bg-blue-100 w-10 h-10 flex items-center justify-center text-blue-600 font-bold">
+                1
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-map-marked-alt text-blue-600 text-4xl mb-4"></i>
+                <h3 class="text-lg font-semibold mb-2">Create Account</h3>
+                <p class="text-gray-500 text-center">
+                    Create an account on our platform and fill in all the required fields
+                </p>
+            </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 relative">
+            <div class="absolute top-0 right-0 rounded-bl-full bg-blue-100 w-10 h-10 flex items-center justify-center text-blue-600 font-bold">
+                2
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-user-friends text-blue-600 text-4xl mb-4"></i>
+                <h3 class="text-lg font-semibold mb-2">Add Properties</h3>
+                <p class="text-gray-500 text-center">
+                    Follow the on screen prompts and add your property.
+                </p>
+            </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 relative">
+            <div class="absolute top-0 right-0 rounded-bl-full bg-blue-100 w-10 h-10 flex items-center justify-center text-blue-600 font-bold">
+                3
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-clipboard-check text-blue-600 text-4xl mb-4"></i>
+                <h3 class="text-lg font-semibold mb-2">Wait for verification</h3>
+                <p class="text-gray-500 text-center">
+                    Once you add a property our team wil check and verify
+                </p>
+            </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 relative">
+            <div class="absolute top-0 right-0 rounded-bl-full bg-blue-100 w-10 h-10 flex items-center justify-center text-blue-600 font-bold">
+                4
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fas fa-home text-blue-600 text-4xl mb-4"></i>
+                <h3 class="text-lg font-semibold mb-2">Add a caretaker</h3>
+                <p class="text-gray-500 text-center">
+                    You can create an invite for a caretaker tp join and manage all your properties.Every transaction and activity will be recorded
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

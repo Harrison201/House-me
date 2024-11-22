@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="bg-white w-64 p-4 flex flex-col space-y-6">
+            <div class="text-xl font-bold flex items-center space-x-2">
+                <div class="text-red-500">
+                    <img src="/images/favicon.png" height="10px" width="50px" alt="">
+                </div>
+                <span>House Me</span>
+            </div>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="#" class="flex items-center text-green-500 font-medium"><span class="mr-3">🏠</span>Dashboard</a></li>
+                    <li><a href="#" class="flex items-center"><span class="mr-3">💬</span>Messages</a></li>
+                    <li><a href="#" class="flex items-center"><span class="mr-3">🏢</span>Properties</a></li>
+                    <li><a href="#" class="flex items-center"><span class="mr-3">📆</span>Bookings</a></li>
+                    <li><a href="#" class="flex items-center"><span class="mr-3">⚙️</span>Settings</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="text-gray-500 flex items-center mt-auto">
+                <span class="mr-2">🔓</span>Log Out
+            </a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Header -->
+            <header class="flex justify-between items-center mb-6">
+                <input type="text" placeholder="Search property" class="border rounded-lg px-4 py-2 w-1/3">
+                <div class="flex items-center space-x-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Personnel</button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Add Property</button>
+                </div>
+            </header>
+
+            <!-- Overview -->
+            <section class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h4 class="text-sm font-semibold">Total Properties</h4>
+                    <p class="text-lg font-bold text-blue-500">134</p>
+                    <p class="text-sm text-gray-500">+1</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h4 class="text-sm font-semibold">Total Bookings</h4>
+                    <p class="text-lg font-bold text-blue-500">17</p>
+                    <p class="text-sm text-gray-500">+7</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h4 class="text-sm font-semibold">Last Month</h4>
+                    <p class="text-lg font-bold text-blue-500">Ksh 600,000</p>
+                    <p class="text-sm text-gray-500">+1</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h4 class="text-sm font-semibold">Total Tenants</h4>
+                    <p class="text-lg font-bold text-blue-500">130</p>
+                    <p class="text-sm text-gray-500">+15</p>
+                </div>
+            </section>
+
+            <!-- Most Viewed -->
+            <section>
+                <h3 class="text-lg font-bold mb-4">Most viewed this week</h3>
+                
+                    <!-- Card -->
+                    {{> properties }}
+                    <!-- Add similar cards -->
+                
+            </section>
+        </main>
+    </div>
+</body>
+</html>

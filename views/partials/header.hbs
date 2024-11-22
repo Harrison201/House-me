@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+
+            <div class="flex items-center space-x-6">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-gray-800">
+                    <a href="#"><img src="/images/favicon.png" height="10px" width="50px" alt=""></a>
+                </div>
+
+                <!-- Menu Items (Desktop and Tablet) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="text-gray-600 font-bold hover:text-gray-900">Home</a>
+                    <a href="/location" class="text-gray-600 hover:text-gray-900">Locations</a>
+                    <a href="/properties" class="text-gray-600 hover:text-gray-900">Properties</a>
+                    <a href="/contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+            </div>
+
+
+            <!-- Right Items -->
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- Link Text -->
+                <i class="fa-solid fa-plus"></i>
+                <a href="#" id="open-modal" class="text-red-600 hover:text-gray-900">Add Property</a>
+
+                <!-- Button -->
+                <a href="#" id="open-modal2" class="px-4 py-4 text-white bg-blue-950 hover:bg-red-600 rounded">
+                    <i class="fa-regular fa-user"></i>
+                    Sign Up
+                </a>
+            </div>
+
+            <!-- Hamburger Icon (Visible on mobile) -->
+            <div class="md:hidden flex items-center">
+                <button id="hamburger-icon" class="text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden">
+            <div class="bg-white w-64 h-full flex flex-col justify-between p-6">
+                <!-- Close Button -->
+                <button id="close-menu" class="self-end text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Items -->
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="text-gray-600 font-bold hover:text-gray-900">Home</a>
+                    <a href="/location" class="text-gray-600 hover:text-gray-900">Locations</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Properties</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+
+                    <!-- Right Items -->
+                    <a href="#" id="open-modal" class="text-red-600 hover:text-gray-900">Sign In</a>
+                    <a href="#" id="open-modal2" class="px-4 py-2 text-white bg-blue-950 hover:bg-red-600 rounded">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Modal (hidden by default Sign ip Modal) -->
+    <div id="LogIn" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <!-- Modal Header -->
+            <div class="text-right">
+                <button id="close-modal" class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="mx-auto text-center mb-4  flex flex-col items-center justify-center p-4">
+                {{!-- <img src="/images/favicon.png" alt="" class="mb-2"> --}}
+                <h2 class="text-lg font-bold text-blue-950">Log In</h2>
+            </div>
+
+            <!-- Modal Content -->
+            <form>
+                <div class="mb-4">
+                    <label for="email" class="block font-bold text-blue-950">Email</label> <br>
+                    <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded "
+                        placeholder="Enter your email">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block font-bold text-blue-950">Password</label> <br>
+                    <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded"
+                        placeholder="Enter your password">
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-yellow-500 text-black rounded font-bold hover:bg-blue-950 hover:text-white rounded-xl"><a href="/LandlordDashboard">Log In</a><i class="fa-solid fa-arrow-right-to-bracket ml-2"></i></button>
+            </form>
+                <br>
+            <div class="text-center">
+                <p class="text-red-500">Forgot Password</p>
+                <p>Don't have an account <span class="text-red-500">Register</span> </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal (hidden by default Sign up Modal Signup Modal) -->
+<div id="signUpModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <!-- Modal Header -->
+        <div class="text-right">
+            <button id="close-modal" class="text-gray-600 hover:text-gray-900">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Logo and Title -->
+        <div class="mx-auto text-center mb-4 flex flex-col items-center justify-center">
+            {{!-- <img src="/images/favicon.png" alt="" class="mb-2"> --}}
+            <h2 class="text-lg font-bold text-blue-950">Sign Up</h2>
+        </div>
+
+        <!-- Modal Content -->
+        <form>
+            <!-- Two-column Grid Layout for Form Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <!-- First Name -->
+                <div>
+                    <label for="firstName" class="block font-bold text-blue-950">First Name</label>
+                    <input type="text" id="firstName" class="w-full p-2 border border-gray-300 rounded" placeholder="First Name">
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                    <label for="lastName" class="block font-bold text-blue-950">Last Name</label>
+                    <input type="text" id="lastName" class="w-full p-2 border border-gray-300 rounded" placeholder="Last Name">
+                </div>
+
+                <!-- Username -->
+                <div>
+                    <label for="username" class="block font-bold text-blue-950">Username</label>
+                    <input type="text" id="username" class="w-full p-2 border border-gray-300 rounded" placeholder="Username">
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block font-bold text-blue-950">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Email">
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label for="password" class="block font-bold text-blue-950">Password</label>
+                    <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded" placeholder="Password">
+                </div>
+
+                <!-- Confirm Password -->
+                <div>
+                    <label for="confirmPassword" class="block font-bold text-blue-950">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="w-full p-2 border border-gray-300 rounded" placeholder="Confirm Password">
+                </div>
+
+                <!-- Phone Number (Single Column) -->
+                <div class="md:col-span-2">
+                    <label for="phoneNumber" class="block font-bold text-blue-950">Phone Number</label>
+                    <input type="tel" id="phoneNumber" class="w-full p-2 border border-gray-300 rounded" placeholder="Phone Number">
+                </div>
+            </div>
+
+            <!-- Register Button -->
+            <div class="text-center">
+                <button type="submit" class="w-full py-2 bg-yellow-400 text-black font-bold rounded hover:bg-blue-950 hover:text-white">
+                    Register
+                </button>
+            </div>
+
+            <!-- Forgot Password and Login Links -->
+            <div class="text-center mt-4">
+                <a href="#" class="text-red-500 hover:underline">Forgot Password?</a>
+            </div>
+            <div class="text-center mt-2 text-gray-600">
+                Already have an account? <a href="#" class="text-blue-950 hover:underline">Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<!-- JavaScript to Toggle Mobile Menu -->
+<script>
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    // Open menu
+    hamburgerIcon.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+    });
+
+    // Close menu
+    closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+</script>
+
+<!-- JavaScript to Toggle Modal -->
+<script>
+    const openModalButton = document.getElementById('open-modal');
+    const LogIn = document.getElementById('LogIn');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Open modal
+    openModalButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        LogIn.classList.remove('hidden');
+    });
+
+    // Close modal
+    closeModalButton.addEventListener('click', () => {
+        LogIn.classList.add('hidden');
+    });
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === signInModal) {
+            LogIn.classList.add('hidden');
+        }
+    });
+</script>
+
+<!-- JavaScript to Toggle Modal -->
+<script>
+    const openModalSignUp = document.getElementById('open-modal2');
+    const signUpModal = document.getElementById('signUpModal');
+    const closeModalSignup = document.getElementById('close-modal');
+
+    // Open modal
+    openModalSignUp.addEventListener('click', (e) => {
+        e.preventDefault();
+        signUpModal.classList.remove('hidden');
+    });
+
+    // Close modal
+    closeModalSignup.addEventListener('click', () => {
+        signUpModal.classList.add('hidden');
+    });
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === signUpModal) {
+            signUpModal.classList.add('hidden');
+        }
+    });
+</script>
+
+</html>

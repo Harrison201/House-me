@@ -1,0 +1,28 @@
+{
+  "name": "housemerealestate",
+  "version": "1.0.0",
+  "description": "Real estate house booking platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "hsm"
+  ],
+  "author": "Harrison Njenga",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1",
+    "handlebar": "^1.0.0",
+    "hbs": "^4.2.0",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
+  }
+}
