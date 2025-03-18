@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/fa/css/all.min.css">
+<div class="container mx-auto px-4 py-8">
+    <!-- Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {{#each properties}}
+        <!-- Card Component -->
+        <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <img src="{{this.image}}" alt="Property Image" class="w-full h-48 object-cover" />
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-semibold text-gray-500">{{this.status}}</span>
+                    <span class="text-lg font-bold text-blue-600">{{this.price}}</span>
+                </div>
+                <h2 class="text-xl font-bold mb-2">{{this.title}}</h2>
+                <div class="flex items-center space-x-4 text-gray-600 mb-4">
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-bed"></i>
+                        <span>{{this.beds}} Beds</span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-bath"></i>
+                        <span>{{this.baths}} Baths</span>
+                    </div>
+                </div>
+                <hr class="mb-2">    
+                <!-- Location and Action Buttons in Same Row -->
+                <div class="flex items space-x-2 mb-4 justify-between">
+                    <!-- Location -->
+                    <div class="flex items-center w-1/2 text-gray-600">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="truncate">{{this.location}}</span>
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-4">
+                        <button class="text-blue-600 hover:text-blue-800">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="text-red-600 hover:text-red-800">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <!-- Pagination -->
+    <div class="flex justify-center mt-6">
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">1</a></li>
+                <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">2</a></li>
+                <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">3</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+

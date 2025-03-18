@@ -13,16 +13,22 @@
   "author": "Harrison Njenga",
   "license": "ISC",
   "dependencies": {
+    "@alpinejs/persist": "^3.12.0",
     "@fortawesome/fontawesome-free": "^6.6.0",
-    "express": "^4.21.1",
+    "apexcharts": "^3.36.3",
+    "bcryptjs": "^3.0.0",
+    "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
     "handlebar": "^1.0.0",
     "hbs": "^4.2.0",
-    "nodemon": "^3.1.7"
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.12.0",
+    "nodemon": "^3.1.7",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+ 
   }
 }

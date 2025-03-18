@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    .stat-card {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        position: relative;
+        padding: 1.5rem;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+        color: #198754;
+        /* Bootstrap green */
+    }
+
+    .stat-heading {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .view-more {
+        background-color: #0B2B55;
+        /* Dark blue */
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0.5rem 1rem;
+        border-top-left-radius: 8px;
+    }
+
+    .view-more:hover {
+        background-color: #083366;
+        /* Slightly darker on hover */
+    }
+
+    .card-custom {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .status-badge {
+        border-radius: 5px;
+        padding: 2px 8px;
+        font-size: 0.85rem;
+    }
+
+    .view-link {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #6c757d;
+    }
+
+    .view-link:hover {
+        color: #000;
+    }
+</style>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">Hello , {{user.fullName}}</h4>
+                            <p>Welcome back</p>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <!-- card -->
+                        <div class=" ">
+                            <!-- card body -->
+                            <div class="card stat-card ">
+                                <div class="card-body">
+                                    <div class="stat-heading">Total Properties</div>
+                                    <div class="stat-value">0</div>
+                                    <div class="stat-icon">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <a href="#" class="view-more">View Properties</a>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <!-- card -->
+                        <div class="card card-h-100">
+                            <!-- card body -->
+                            <div class=" stat-card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="stat-heading">Total Bookings</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    {{!-- <div class="stat-icon text-primary" style="font-size: 2rem;">
+                                        <i data-feather="home"></i> <!-- House Icon -->
+
+                                    </div> --}}
+                                </div>
+                                <a href="#" class="view-more">View Bookings</a>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div>
+                    <!-- end col --><!-- end col-->
+
+                    <div class="col-xl-3 col-md-6">
+                        <!-- card -->
+                        <div class=" card-h-100">
+                            <!-- card body -->
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="stat-heading">Total Tenants</div>
+                                    <div class="stat-value">0</div>
+                                    <div class="stat-icon">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <a href="#" class="view-more">View Tenants</a>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div><!-- end col --><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <!-- card -->
+                        <div class=" card-h-100">
+                            <!-- card body -->
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="stat-heading">Total Revenue</div>
+                                    <div class="stat-value">0</div>
+                                    <div class="stat-icon">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <a href="#" class="view-more">View Revenue</a>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div><!-- end col --><!-- end col -->
+
+                    <div class="col-xl-3 col-md-6">
+                        <!-- card -->
+                        <div class=" card-h-100">
+                            <!-- card body -->
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div class="stat-heading">Properties for Sale</div>
+                                    <div class="stat-value">0</div>
+                                    <div class="stat-icon">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <a href="#" class="view-more">View Properties for sale</a>
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div>
+                </div><!-- end row-->
+
+
+
+
+                {{!-- <div class="container-fluid py-4">
+                    <div class="row g-4">
+                        <!-- Area Map Section -->
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card card-custom p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0">Recent Bookings</h5>
+                                    <a href="#" class="view-link">View Bookings <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Rocky</strong></td>
+                                            <td>Ksh 1245/M</td>
+                                            <td>Rent</td>
+                                            <td><span class="badge bg-success status-badge">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Cristino</strong></td>
+                                            <td>Ksh 12450</td>
+                                            <td>Sell</td>
+                                            <td><span class="badge bg-danger status-badge">Unpaid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Jack</strong></td>
+                                            <td>Ksh 12450</td>
+                                            <td>Sell</td>
+                                            <td><span class="badge bg-success status-badge">Paid</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Recent Transactions Section -->
+                        <div class="col-lg-5 col-md-12">
+                            <div class="card card-custom p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0">Recent Transactions</h5>
+                                    <a href="#" class="view-link">View orders <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Rocky</strong></td>
+                                            <td>Ksh 1245/M</td>
+                                            <td>Rent</td>
+                                            <td><span class="badge bg-success status-badge">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Cristino</strong></td>
+                                            <td>Ksh 12450</td>
+                                            <td>Sell</td>
+                                            <td><span class="badge bg-danger status-badge">Unpaid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10th Aug 2023</td>
+                                            <td><strong>Mr. Jack</strong></td>
+                                            <td>Ksh 12450</td>
+                                            <td>Sell</td>
+                                            <td><span class="badge bg-success status-badge">Paid</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Top Properties Section -->
+                        <div class="col-lg-3 col-md-12">
+                            <div class="card card-custom p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0">Top Properties</h5>
+                                    <a href="#" class="view-link">See More <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <img src="https://via.placeholder.com/50" class="rounded me-2"
+                                                alt="Property">
+                                            <span class="fw-bold">House</span>
+                                            <small class="text-muted d-block">Baton Rouge, USA</small>
+                                        </div>
+                                        <span class="text-danger fw-bold">▼ 11%</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <img src="https://via.placeholder.com/50" class="rounded me-2"
+                                                alt="Property">
+                                            <span class="fw-bold">House</span>
+                                            <small class="text-muted d-block">Baton Rouge, USA</small>
+                                        </div>
+                                        <span class="text-success fw-bold">▲ 20%</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <img src="https://via.placeholder.com/50" class="rounded me-2"
+                                                alt="Property">
+                                            <span class="fw-bold">House</span>
+                                            <small class="text-muted d-block">Baton Rouge, USA</small>
+                                        </div>
+                                        <span class="text-success fw-bold">▲ 24%</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <img src="https://via.placeholder.com/50" class="rounded me-2"
+                                                alt="Property">
+                                            <span class="fw-bold">House</span>
+                                            <small class="text-muted d-block">Baton Rouge, USA</small>
+                                        </div>
+                                        <span class="text-success fw-bold">▲ 21%</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+
+
+
+
+       <!-- Area Map Section -->
+        {{!-- <div class="col-lg-4 col-md-12">
+            <div class="card card-custom p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold mb-0">Area Map</h5>
+                    <small class="text-muted">Last update 5 days ago</small>
+                </div>
+                <div class="text-center mt-3">
+                    <!-- Placeholder for map image -->
+                    <img src="https://via.placeholder.com/300x200" class="img-fluid rounded" alt="Area Map">
+                </div>
+            </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © House Me.
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+            </div> --}}
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+</body>
+
+</html>
+
+
+
+{{!-- <h2 class="font-bold  text-3xl">Overview</h2>
+<br>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+    <div class="bg-white rounded-lg shadow-md ">
+        <div class="flex justify-between items-center mb-2 p-4">
+            <h2 class="text-lg font-bold">Total Properties</h2>
+            <i class="fa-solid fa-building h-6 w-6  text-3xl text-green-700"></i>
+        </div>
+        <div class="text-4xl font-bold mb-2 p-4 flex justify-between items-center">
+            <p>134</p>
+            <span class=" text-green-600 px-2 py-1 rounded-md  font-semibold text-3xl">+1</span>
+        </div>
+        <div class="flex justify-between bg-green-700 p-2 px-4 rounded-xl items-center">
+            <a href="http://"><i class="fa-solid fa-circle-plus text-white"></i></a>
+            <h4 class="text-white underline"><a href="http://">View All</a></h4>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md ">
+        <div class="flex justify-between items-center mb-2 p-4">
+            <h2 class="text-lg font-bold">Total Bookings</h2>
+            <i class="fa-solid fa-bookmark text-3xl text-green-700"></i>
+        </div>
+        <div class="text-4xl font-bold mb-2 p-4 flex justify-between items-center">
+            <p>17</p>
+            <span class=" text-green-600 px-2 py-1 rounded-md  font-semibold text-3xl">+1</span>
+        </div>
+        <div class="flex justify-between bg-green-700 p-2 px-4 rounded-xl items-center">
+            <a href="http://"><i class="fa-solid fa-circle-plus text-white"></i></a>
+            <h4 class="text-white underline"><a href="http://">View All</a></h4>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md ">
+        <div class="flex justify-between items-center mb-2 p-4">
+            <h2 class="text-lg font-bold">Last Month</h2>
+            <i class="fa-solid fa-user text-3xl text-green-700"></i>
+        </div>
+        <div class="text-4xl font-bold mb-2 p-4 flex justify-between items-center">
+            <p>600,000</p>
+            <span class=" text-green-600 px-2 py-1 rounded-md  font-semibold text-3xl">+1</span>
+        </div>
+        <div class="flex justify-between bg-green-700 p-2 px-4 rounded-xl items-center">
+            <a href="http://"><i class="fa-solid fa-circle-plus text-white"></i></a>
+            <h4 class="text-white underline"><a href="http://">View All</a></h4>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md ">
+        <div class="flex justify-between items-center mb-2 p-4">
+            <h2 class="text-lg font-bold">Total Tenants</h2>
+            <i class="fa-solid fa-user 6 w-6  text-3xl text-green-700"></i>
+        </div>
+        <div class="text-4xl font-bold mb-2 p-4 flex justify-between items-center">
+            <p>134</p>
+            <span class=" text-green-600 px-2 py-1 rounded-md  font-semibold text-3xl">+1</span>
+        </div>
+        <div class="flex justify-between bg-green-700 p-2 px-4 rounded-xl items-center">
+            <a href="http://"><i class="fa-solid fa-circle-plus text-white"></i></a>
+            <h4 class="text-white underline"><a href="http://">View All</a></h4>
+        </div>
+    </div>
+</div>
+
+
+
+<h3 class="mt-7 font-bold text-2xl ">Most viewed this week</h3>
+
+{{> Lldashboardproperties }} --}}

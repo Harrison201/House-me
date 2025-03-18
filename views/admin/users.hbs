@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" class="group" data-sidebar-size="lg" data-theme-mode="light">
+
+<body class="bg-body-light dark:bg-dark-body">
+    <!-- Start Main Content -->
+    <div
+        class="main-content group-data-[sidebar-size=lg]:xl:ml-[calc(theme('spacing.app-menu')_+_16px)] group-data-[sidebar-size=sm]:xl:ml-[calc(theme('spacing.app-menu-sm')_+_16px)] px-4 ac-transition">
+        <div class="card">
+            <h2 class="card-title">Users</h2>
+        </div>
+        <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <!-- Tabs Navigation -->
+            <div class="flex border-b">
+                <button
+                    class="tab-button py-2 px-4 text-gray-600 hover:text-purple-600 border-b-2 border-transparent focus:border-purple-600 focus:text-purple-600"
+                    data-tab="tenants">
+                    Tenants
+                </button>
+                <button
+                    class="tab-button py-2 px-4 text-gray-600 hover:text-purple-600 border-b-2 border-transparent focus:border-purple-600 focus:text-purple-600"
+                    data-tab="landlords">
+                    Landlords
+                </button>
+                <button
+                    class="tab-button py-2 px-4 text-gray-600 hover:text-purple-600 border-b-2 border-transparent focus:border-purple-600 focus:text-purple-600"
+                    data-tab="caretakers">
+                    Caretakers
+                </button>
+            </div>
+
+            <!-- Tenants Table -->
+            <div class="tab-content mt-4" id="tenants">
+                <div class="flex space-between">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 mr-4">Tenants</h2>
+
+                </div>
+                <div class="overflow-x-auto">
+
+                    <div class="flex-center-between">
+                        <div class="flex items-center gap-5">
+                            <form class="max-w-80 relative">
+                                <span class="absolute top-1/2 -translate-y-[40%] left-2.5">
+                                    <i class="ri-search-line text-gray-900 dark:text-dark-text text-[14px]"></i>
+                                </span>
+                                <input type="text" placeholder="Search for..." class="form-input pl-[30px]">
+                            </form>
+                            <button type="button"
+                                class="font-spline_sans text-sm px-1 text-gray-900 dark:text-dark-text flex-center gap-1.5">
+                                <i class="ri-loop-right-line text-gray-900 dark:text-dark-text text-sm"></i>
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                        <button class="btn b-light btn-primary-light">
+                            <i class="ri-add-fill text-inherit"></i>
+                            <span>Add Data</span>
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table
+                            class="table-auto border-collapse dk-border-one w-full whitespace-nowrap text-left text-gray-900 dark:text-dark-text font-medium leading-none">
+                            <thead class=" text-gray-500 dark:text-dark-text font-medium">
+                                <tr>
+                                    <th class="px-4 py-1">Property Picture</th>
+                                    <th class="px-4 py-1">Property Name</th>
+                                    <th class="px-4 py-1">Added</th>
+                                    <th class="px-4 py-1">Status</th>
+                                    <th class="px-4 py-1">LandLord</th>
+                                    <th class="px-4 py-1">Caretaker</th>
+                                    <th class="px-4 py-1">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
+                                <tr>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold"><img
+                                            src="assets/images/student/student-3.png" alt="student"
+                                            class="size-6 rounded-50"></td>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold">Kileleshwa sprigs</td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div
+                                            class="flex-center w-max h-8 text-heading dark:text-dark-text px-2.5 bg-gray-200 dark:bg-dark-icon rounded-full">
+                                            🕒 01 Jan - 26 Jan
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex flex-col gap-2">
+                                            <div class="text-xs leading-none text-gray-500 dark:text-dark-text"><span
+                                                    class="badge badge-success-light rounded-full">Occupied/Rent</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex ">
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-apps-2-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-secondary-icon-light">
+                                                <i class="ri-chat-3-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-message-2-line text-inherit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex-center-between">
+                        <div class="font-spline_sans text-sm text-gray-900 dark:text-dark-text">Showing 1 to 8 of 20
+                            entries</div>
+                        <nav class="dk-border-one rounded-[4px] overflow-hidden">
+                            <ul class="divide-x divide-gray-200 dark:divide-dark-border-three flex items-center">
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 -rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500 active">1</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">
+                                        <i class="ri-more-fill text-inherit"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">10</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landlords Table -->
+            <div class="tab-content mt-4 hidden" id="landlords">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Landlords</h2>
+                <div class="overflow-x-auto">
+
+                    <div class="flex-center-between">
+                        <div class="flex items-center gap-5">
+                            <form class="max-w-80 relative">
+                                <span class="absolute top-1/2 -translate-y-[40%] left-2.5">
+                                    <i class="ri-search-line text-gray-900 dark:text-dark-text text-[14px]"></i>
+                                </span>
+                                <input type="text" placeholder="Search for..." class="form-input pl-[30px]">
+                            </form>
+                            <button type="button"
+                                class="font-spline_sans text-sm px-1 text-gray-900 dark:text-dark-text flex-center gap-1.5">
+                                <i class="ri-loop-right-line text-gray-900 dark:text-dark-text text-sm"></i>
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                        <button class="btn b-light btn-primary-light">
+                            <i class="ri-add-fill text-inherit"></i>
+                            <span>Add Data</span>
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table
+                            class="table-auto border-collapse dk-border-one w-full whitespace-nowrap text-left text-gray-900 dark:text-dark-text font-medium leading-none">
+                            <thead class=" text-gray-500 dark:text-dark-text font-medium">
+                                <tr>
+                                    <th class="px-4 py-1">Property Picture</th>
+                                    <th class="px-4 py-1">Property Name</th>
+                                    <th class="px-4 py-1">Added</th>
+                                    <th class="px-4 py-1">Status</th>
+                                    <th class="px-4 py-1">LandLord</th>
+                                    <th class="px-4 py-1">Caretaker</th>
+                                    <th class="px-4 py-1">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
+                                <tr>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold"><img
+                                            src="assets/images/student/student-3.png" alt="student"
+                                            class="size-6 rounded-50"></td>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold">Kileleshwa sprigs</td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div
+                                            class="flex-center w-max h-8 text-heading dark:text-dark-text px-2.5 bg-gray-200 dark:bg-dark-icon rounded-full">
+                                            🕒 01 Jan - 26 Jan
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex flex-col gap-2">
+                                            <div class="text-xs leading-none text-gray-500 dark:text-dark-text"><span
+                                                    class="badge badge-success-light rounded-full">Occupied/Rent</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex ">
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-apps-2-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-secondary-icon-light">
+                                                <i class="ri-chat-3-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-message-2-line text-inherit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex-center-between">
+                        <div class="font-spline_sans text-sm text-gray-900 dark:text-dark-text">Showing 1 to 8 of 20
+                            entries</div>
+                        <nav class="dk-border-one rounded-[4px] overflow-hidden">
+                            <ul class="divide-x divide-gray-200 dark:divide-dark-border-three flex items-center">
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 -rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500 active">1</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">
+                                        <i class="ri-more-fill text-inherit"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">10</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caretakers Table -->
+            <div class="tab-content mt-4 hidden" id="caretakers">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Caretakers</h2>
+                <div class="overflow-x-auto">
+
+                    <div class="flex-center-between">
+                        <div class="flex items-center gap-5">
+                            <form class="max-w-80 relative">
+                                <span class="absolute top-1/2 -translate-y-[40%] left-2.5">
+                                    <i class="ri-search-line text-gray-900 dark:text-dark-text text-[14px]"></i>
+                                </span>
+                                <input type="text" placeholder="Search for..." class="form-input pl-[30px]">
+                            </form>
+                            <button type="button"
+                                class="font-spline_sans text-sm px-1 text-gray-900 dark:text-dark-text flex-center gap-1.5">
+                                <i class="ri-loop-right-line text-gray-900 dark:text-dark-text text-sm"></i>
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                        <button class="btn b-light btn-primary-light">
+                            <i class="ri-add-fill text-inherit"></i>
+                            <span>Add Data</span>
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table
+                            class="table-auto border-collapse dk-border-one w-full whitespace-nowrap text-left text-gray-900 dark:text-dark-text font-medium leading-none">
+                            <thead class=" text-gray-500 dark:text-dark-text font-medium">
+                                <tr>
+                                    <th class="px-4 py-1">Property Picture</th>
+                                    <th class="px-4 py-1">Property Name</th>
+                                    <th class="px-4 py-1">Added</th>
+                                    <th class="px-4 py-1">Status</th>
+                                    <th class="px-4 py-1">LandLord</th>
+                                    <th class="px-4 py-1">Caretaker</th>
+                                    <th class="px-4 py-1">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
+                                <tr>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold"><img
+                                            src="assets/images/student/student-3.png" alt="student"
+                                            class="size-6 rounded-50"></td>
+                                    <td class="px-4 py-4 rounded-row-border font-semibold">Kileleshwa sprigs</td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div
+                                            class="flex-center w-max h-8 text-heading dark:text-dark-text px-2.5 bg-gray-200 dark:bg-dark-icon rounded-full">
+                                            🕒 01 Jan - 26 Jan
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex flex-col gap-2">
+                                            <div class="text-xs leading-none text-gray-500 dark:text-dark-text"><span
+                                                    class="badge badge-success-light rounded-full">Occupied/Rent</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        Martin Luthor
+                                    </td>
+                                    <td class="px-4 py-4 rounded-row-border">
+                                        <div class="flex ">
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-apps-2-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-secondary-icon-light">
+                                                <i class="ri-chat-3-line text-inherit"></i>
+                                            </a>
+                                            <a href="#" class="btn-icon btn-primary-icon-light">
+                                                <i class="ri-message-2-line text-inherit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex-center-between">
+                        <div class="font-spline_sans text-sm text-gray-900 dark:text-dark-text">Showing 1 to 8 of 20
+                            entries</div>
+                        <nav class="dk-border-one rounded-[4px] overflow-hidden">
+                            <ul class="divide-x divide-gray-200 dark:divide-dark-border-three flex items-center">
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 -rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500 active">1</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">
+                                        <i class="ri-more-fill text-inherit"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-icon hover:text-primary-500 [&.active]:text-primary-500">10</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="font-spline_sans font-medium flex-center size-8 text-gray-900 dark:text-dark-text bg-white dark:bg-dark-card-two hover:bg-primary-500 hover:text-white [&.active]:bg-primary-500 [&.active]:text-white active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4 rotate-45">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- End Main Content -->
+
+
+
+    <script>
+        // Tab Switching Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-button");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    const target = this.getAttribute("data-tab");
+
+                    // Hide all content
+                    contents.forEach(content => content.classList.add("hidden"));
+
+                    // Show target content
+                    document.getElementById(target).classList.remove("hidden");
+
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove("text-purple-600", "border-purple-600"));
+
+                    // Add active class to current tab
+                    this.classList.add("text-purple-600", "border-purple-600");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

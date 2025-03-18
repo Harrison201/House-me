@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Real Estate Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white shadow-2xl rounded-xl w-full max-w-4xl overflow-hidden">
+        <!-- Success Message Overlay (Initially Hidden) -->
+        <div id="successOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-xl p-6 shadow-lg max-w-md mx-auto text-center">
+                <div class="w-16 h-16 bg-green-100 mx-auto rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-check text-3xl text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Successfully Registered!</h3>
+                <p class="text-gray-600 mb-4">Your account has been created successfully.</p>
+                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                    <div id="progressBar" class="bg-green-500 h-2 rounded-full" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-gray-500">Redirecting to login page...</p>
+            </div>
+        </div>
+
+        <!-- Two-column layout container -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Left column - Image/Banner for desktop -->
+            <div class="hidden md:block md:w-2/5 bg-cover bg-center" style="background-image: url('/api/placeholder/800/1200')">
+                <div class="h-full w-full bg-black bg-opacity-40 p-8 flex flex-col justify-end">
+                    <h3 class="text-white text-2xl font-bold">Find Your Dream Home</h3>
+                    <p class="text-gray-200 mt-2">Join our community of homeowners and property seekers today.</p>
+                </div>
+            </div>
+            
+            <!-- Right column - Form -->
+            <div class="w-full md:w-3/5 p-6 sm:p-8">
+                <!-- Header with logo placeholder -->
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 ml-2">RealEstate<span class="text-blue-600">Portal</span></h2>
+                    </div>
+                    <a href="/login" class="text-sm text-blue-600 hover:underline">Already have an account?</a>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-1">Create Your Account</h3>
+                <p class="text-gray-500 text-sm mb-6">Fill in your details to get started</p>
+
+                <!-- ✅ Success & Error Messages -->
+                <div id="messageBox" class="hidden p-3 rounded-lg text-center font-semibold mb-4"></div>
+
+                <form id="registerForm" action="/register" method="post" class="space-y-4">
+                    <!-- Full Name -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                {{!-- <i class="fas fa-user text-gray-400"></i> --}}
+                            </div>
+                            <input type="text" placeholder="John Doe" name="fullName" class="w-full pl-10 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition duration-200" required>
+                        </div>
+                    </div>
+                  
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                                {{!-- <i class="fas fa-envelope text-gray-400"></i> --}}
+                            </div>
+                            <input type="email" placeholder="your@email.com" name="email" class="w-full pl-10 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition duration-200" required>
+                        </div>
+                    </div>
+
+                    <!-- Two-column layout for password and phone -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Password with toggle eye icon -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                                    {{!-- <i class="fas fa-lock text-gray-400"></i> --}}
+                                </div>
+                                <input type="password" id="password" placeholder="••••••••" name="password" class="w-full pl-10 pr-10 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition duration-200" required>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer z-10">
+                                    <i id="togglePassword" class="fas fa-eye text-gray-400 hover:text-gray-600"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                                    {{!-- <i class="fas fa-phone text-gray-400"></i> --}}
+                                </div>
+                                <input type="tel" placeholder="+254 700000000" name="phoneNumber" class="w-full pl-10 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition duration-200" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Register Button -->
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-yellow-500 text-black hover:text-white font-medium py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300 transform hover:-translate-y-1">
+                            Create Account
+                        </button>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="text-center text-sm text-gray-500">
+                        By registering, you agree to our 
+                        <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and 
+                        <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+                    </div>
+
+                    <!-- Forgot Password Link -->
+                    <div class="text-center border-t border-gray-200 pt-4 mt-4">
+                        <a href="/forgot-password" class="text-blue-600 text-sm hover:underline">Forgot your password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ JavaScript for Success/Error Message, Redirect & Password Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get query parameters (to check for success/error messages)
+            const urlParams = new URLSearchParams(window.location.search);
+            const successMessage = urlParams.get("success");
+            const errorMessage = urlParams.get("error");
+
+            // Get message box
+            const messageBox = document.getElementById("messageBox");
+            const successOverlay = document.getElementById("successOverlay");
+            const progressBar = document.getElementById("progressBar");
+
+            // Form submission handling with fetch API
+            const registerForm = document.getElementById("registerForm");
+            
+            registerForm.addEventListener("submit", function(e) {
+                e.preventDefault(); // Prevent default form submission
+                
+                // Create FormData object
+                const formData = new FormData(registerForm);
+                
+                // Convert FormData to JSON
+                const formDataJson = {};
+                formData.forEach((value, key) => { formDataJson[key] = value });
+                
+                // Submit form data via fetch
+                fetch("/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formDataJson)
+                })
+                .then(response => {
+                    if (response.redirected) {
+                        // Check if the redirect URL contains success parameter
+                        const redirectUrl = new URL(response.url);
+                        if (redirectUrl.searchParams.has("success")) {
+                            // Show success overlay with animation
+                            successOverlay.classList.remove("hidden");
+                            
+                            // Animate progress bar
+                            let width = 0;
+                            const interval = setInterval(() => {
+                                if (width >= 100) {
+                                    clearInterval(interval);
+                                    window.location.href = redirectUrl.href;
+                                } else {
+                                    width += 2;
+                                    progressBar.style.width = width + "%";
+                                }
+                            }, 40); // 2000ms / 50 steps = 40ms per step
+                        } else {
+                            window.location.href = response.url;
+                        }
+                    } else if (!response.ok) {
+                        return response.text().then(text => {
+                            throw new Error(text || "Registration failed");
+                        });
+                    }
+                })
+                .catch(error => {
+                    messageBox.innerText = error.message || "An error occurred during registration";
+                    messageBox.classList.add("bg-red-500", "text-white");
+                    messageBox.style.display = "block";
+                });
+            });
+
+            // Handle direct URL parameters (for when page loads with params)
+            if (successMessage) {
+                messageBox.innerText = successMessage;
+                messageBox.classList.add("bg-green-500", "text-white");
+                messageBox.style.display = "block";
+
+                // Redirect after 2 seconds
+                setTimeout(() => window.location.href = "/login", 2000);
+            }
+
+            if (errorMessage) {
+                messageBox.innerText = errorMessage;
+                messageBox.classList.add("bg-red-500", "text-white");
+                messageBox.style.display = "block";
+            }
+            
+            // Password visibility toggle functionality
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                // Toggle the password visibility
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle the eye icon
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- Start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Add Caretaker</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Caretaker</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End page title -->
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header bg-soft-primary">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm">
+                                        <div class="avatar-title rounded-circle bg-primary">
+                                            <i class="mdi mdi-account-tie font-size-20"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">New Caretaker Information</h5>
+                                    <p class="text-muted mb-0">Fill in the details to add a new caretaker to your property management system.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <!-- Profile Picture Upload -->
+                            <div class="text-center mb-4">
+                                <label for="profileImage" class="form-label d-block">Profile Picture</label>
+                                <div class="position-relative d-inline-block">
+                                    <div class="avatar-xl mx-auto mb-3">
+                                        <div class="avatar-title bg-light text-primary rounded-circle" style="font-size: 48px;">
+                                            <i class="mdi mdi-account-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0">
+                                        <label for="profileImage" class="btn btn-sm btn-primary rounded-circle">
+                                            <i class="mdi mdi-camera"></i>
+                                            <input type="file" class="d-none" id="profileImage" accept="image/*">
+                                        </label>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Click the camera icon to upload a photo</p>
+                            </div>
+
+                            <!-- Form -->
+                            <form id="caretakerForm" method="POST" action="/api/caretaker" class="needs-validation" novalidate>
+                                <!-- Personal Details Section -->
+                                <div class="card border shadow-none mb-4">
+                                    <div class="card-header bg-transparent py-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="mdi mdi-account-details text-primary me-2 font-size-18"></i>
+                                            <h5 class="card-title mb-0">Personal Details</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="caretakerName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="mdi mdi-account"></i></span>
+                                                    <input type="text" class="form-control" id="caretakerName" name="full_name"
+                                                        placeholder="Enter full name" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide the caretaker's full name.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="caretakerPhone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="mdi mdi-phone"></i></span>
+                                                    <input type="tel" class="form-control" id="caretakerPhone" name="phone_no"
+                                                        placeholder="Enter phone number" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid phone number.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row g-3 mt-3">
+                                            <div class="col-md-6">
+                                                <label for="caretakerEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="mdi mdi-email"></i></span>
+                                                    <input type="email" class="form-control" id="caretakerEmail" name="email"
+                                                        placeholder="Enter email" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid email address.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="dateEmployed" class="form-label">Date Employed <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                    <input type="date" class="form-control" id="dateEmployed" name="date_added" required>
+                                                    <div class="invalid-feedback">
+                                                        Please select the employment date.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row g-3 mt-3">
+                                            <div class="col-md-12">
+                                                <label for="caretakerAddress" class="form-label">Address <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="mdi mdi-map-marker"></i></span>
+                                                    <input type="text" class="form-control" id="caretakerAddress" name="locations"
+                                                        placeholder="Enter address" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide the caretaker's address.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Optional Section - Employment Details -->
+                                <div class="card border shadow-none mb-4 collapsed-card">
+                                    <div class="card-header bg-transparent py-3" data-bs-toggle="collapse" href="#employmentDetails" role="button" aria-expanded="false">
+                                        <div class="d-flex align-items-center">
+                                            <i class="mdi mdi-briefcase text-primary me-2 font-size-18"></i>
+                                            <h5 class="card-title mb-0">Additional Details</h5>
+                                            <i class="mdi mdi-chevron-down ms-auto"></i>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="employmentDetails">
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="emergencyContact" class="form-label">Emergency Contact</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="mdi mdi-phone-alert"></i></span>
+                                                        <input type="tel" class="form-control" id="emergencyContact" name="emergency_contact"
+                                                            placeholder="Emergency contact number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="idNumber" class="form-label">ID Number</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="mdi mdi-card-account-details"></i></span>
+                                                        <input type="text" class="form-control" id="idNumber" name="id_number"
+                                                            placeholder="National ID number">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row g-3 mt-3">
+                                                <div class="col-md-12">
+                                                    <label for="notes" class="form-label">Additional Notes</label>
+                                                    <textarea class="form-control" id="notes" name="notes" rows="3" 
+                                                        placeholder="Any additional information about the caretaker"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button Section -->
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-end">
+                                            <button type="button" class="btn btn-light me-2" onclick="window.history.back()">
+                                                <i class="mdi mdi-arrow-left me-1"></i> Cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="mdi mdi-content-save me-1"></i> Save Caretaker
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add validation script -->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+    // Preview uploaded image
+    document.getElementById('profileImage').addEventListener('change', function (e) {
+        if (e.target.files && e.target.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // You would implement the logic to display the image preview here
+                // This is just placeholder code
+                const avatarElement = document.querySelector('.avatar-title');
+                avatarElement.innerHTML = '<img src="' + e.target.result + '" class="rounded-circle" width="80" height="80" />';
+                avatarElement.classList.remove('bg-light', 'text-primary');
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
+</script>

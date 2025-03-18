@@ -1,53 +1,102 @@
- <link rel="stylesheet" href="/fa/css/all.min.css">
- <div class="container mx-auto px-4 py-8">
-        <!-- Grid Container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {{#each properties}}
-            <!-- Card Component -->
-            <div class="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="{{this.image}}" alt="Property Image" class="w-full h-48 object-cover" />
+{{!-- <div class="container mx-auto px-4 py-8 mt-11">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {{#each properties}}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="{{this.image}}" alt="House 3" class="w-full h-48 object-cover" />
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">
+                    {{this.title}}
+                </h3>
+
+                <div class="flex items-center justify-start text-sm text-green-600 mt-3">
+                    <span class="mr-4"><i class="fas fa-expand-arrows-alt"></i> 8000sqf</span>
+                    <span class="mr-4"><i class="fas fa-bed"></i> 4 Beds</span>
+                    <span><i class="fas fa-bath"></i> 4 Baths</span>
+                </div>
+
+                <div class="mt-4 flex justify-between items-center">
+                    <div>
+                        <span class="block text-gray-600">{{this.status}}</span>
+                        <span class="font-semibold text-lg">{{this.price}}</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-600">Location</span>
+                        <p>{{this.location}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div> --}}
+
+
+{{!-- <div class="container mx-auto px-4 py-8 mt-11">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {{#each properties}}
+        <a href="/property/{{@index}}" class="block">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-sm font-semibold text-gray-500">{{this.status}}</span>
-                        <span class="text-lg font-bold text-blue-600">{{this.price}}</span>
+                    <h3 class="text-lg font-semibold text-gray-800">{{this.title}}</h3>
+                    <div class="flex items-center justify-start text-sm text-green-600 mt-3">
+                        <span class="mr-4"><i class="fas fa-expand-arrows-alt"></i> 8000sqf</span>
+                        <span class="mr-4"><i class="fas fa-bed"></i> {{this.beds}} Beds</span>
+                        <span><i class="fas fa-bath"></i> {{this.baths}} Baths</span>
                     </div>
-                    <h2 class="text-xl font-bold mb-2">{{this.title}}</h2>
-                    <div class="flex items-center space-x-4 text-gray-600 mb-4">
-                        <div class="flex items-center space-x-1">
-                            <i class="fas fa-bed"></i>
-                            <span>{{this.beds}} Beds</span>
+                    <div class="mt-4 flex justify-between items-center">
+                        <div>
+                            <span class="block text-gray-600">{{this.status}}</span>
+                            <span class="font-semibold text-lg">{{this.price}}</span>
                         </div>
-                        <div class="flex items-center space-x-1">
-                            <i class="fas fa-bath"></i>
-                            <span>{{this.baths}} Baths</span>
+                        <div>
+                            <span class="block text-gray-600">Location</span>
+                            <p>{{this.location}}</p>
                         </div>
-                    </div>
-                    <hr class="mb-2">    
-                    <!-- Location and Button in Same Row -->
-                    <div class="flex items space-x-2 mb-4 justify-between">
-                        <!-- Location -->
-                        <div class="flex items-center w-1/2 text-gray-600">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span class="truncate">{{this.location}}</span>
-                        </div>
-                        <!-- View Button -->
-                        <button class=" bg-amber-400 text-black font-bold py-2 px-2 rounded-xl hover:bg-red-600 hover:text-white">
-                            View
-                        </button>
                     </div>
                 </div>
             </div>
-            {{/each}}
-        </div>
-        <!-- Pagination -->
-        <div class="flex justify-center mt-6">
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">1</a></li>
-                    <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">2</a></li>
-                    <li><a href="#" class="px-3 py-1 rounded-lg text-blue-600 border">3</a></li>
-                </ul>
-            </nav>
-        </div>
-      
+        </a>
+        {{/each}}
     </div>
+</div> --}}
+
+<div class="container mx-auto px-4 py-8 mt-11">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {{#each properties}}
+        <a href="/property/{{@index}}" class="block">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <!-- Property Image -->
+                <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-48 object-cover" />
+
+                <!-- Property Content -->
+                <div class="p-4">
+                    <!-- Title -->
+                    <h3 class="text-lg font-semibold text-gray-800">{{this.title}}</h3>
+
+                    <!-- Beds, Baths & Area -->
+                    <div class="flex items-center justify-start text-sm text-green-600 mt-3">
+                        <span class="mr-4"><i class="fas fa-expand-arrows-alt"></i> 8000sqf</span>
+                        <span class="mr-4"><i class="fas fa-bed"></i> {{this.beds}} Beds</span>
+                        <span><i class="fas fa-bath"></i> {{this.baths}} Baths</span>
+                    </div>
+
+                    <!-- Rent & Location (Aligned Fields) -->
+                    <div class="mt-4 flex justify-between items-center">
+                        <div class="w-1/2">
+                            <span class="block text-gray-600">Rent</span>
+                            <span class="font-semibold text-lg">{{this.price}}</span>
+                        </div>
+                        <div class="w-1/2 text-right">
+                            <span class="block text-gray-600">Location</span>
+                            <p>{{this.location}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</div>
+

@@ -1,0 +1,238 @@
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Tenants</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Tenats</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <h5 class="card-title">Total Tenants <span class="text-muted fw-normal ms-2">(400)</span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
+                        <div>
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="List"><i class="bx bx-list-ul"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Grid"><i class="bx bx-grid-alt"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-light"><i class="bx bx-plus me-1"></i> Add New</a>
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="btn btn-link text-muted py-1 font-size-16 shadow-none dropdown-toggle" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bx bx-dots-horizontal-rounded"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="table-responsive mb-4">
+                <table class="table table-striped d table-hover table-responsive" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 50px;">
+                                <div class="form-check font-size-16">
+                                    <input type="checkbox" class="form-check-input" id="checkAll">
+                                    <label class="form-check-label" for="checkAll"></label>
+                                </div>
+                            </th>
+                            <th scope="col">Name <i class="fas fa-sort"></i></th>
+                            <th scope="col">Property Number <i class="fas fa-sort"></i></th>
+                            <th scope="col">Property Occupied</th>
+                            <th scope="col">Check in</th>
+                            <th scope="col">Check out</th>
+                            <th scope="col">Due Amount</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check font-size-16">
+                                    <input type="checkbox" class="form-check-input" id="contacusercheck1">
+                                    <label class="form-check-label" for="contacusercheck1"></label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#" class="text-body">Michael Karanja</a>
+                            </td>
+
+                            <td>123</td>
+                            <td>
+                                Greens view Villa
+                            </td>
+                            <td>12/12/35 10:00am</td>
+                            <td>12/12/35 15:00hrs</td>
+                            <td>Ksh 12,000</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-soft-dark waves-effect waves-light"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="View tenant">
+                                       <i class="bx bx-edit font-size-16 align-middle"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-soft-danger waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target="#blockPropertyModal"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Suspend Tenant">
+                                        <i class="bx bx-block font-size-16 align-middle"></i>
+                                    </button>
+
+                                    <button type="button" style="background-color: #1d0d64;"
+                                        class="btn text-white  btn-rounded waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target="#deletePropertyModal"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Tenant">
+                                        Delete Tenant
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check font-size-16">
+                                    <input type="checkbox" class="form-check-input" id="contacusercheck1">
+                                    <label class="form-check-label" for="contacusercheck1"></label>
+                                </div>
+                            </th>
+                            <td>
+                                <a href="#" class="text-body">Michael Karanja</a>
+                            </td>
+
+                            <td>123</td>
+                            <td>
+                                Greens view Villa
+                            </td>
+                            <td>12/12/35 10:00am</td>
+                            <td>12/12/35 15:00hrs</td>
+                            <td>Ksh 12,000</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-soft-dark waves-effect waves-light"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="View tenant">
+                                        <i class="bx bx-edit font-size-16 align-middle"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-soft-danger waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target="#blockPropertyModal"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Suspend Tenant">
+                                        <i class="bx bx-block font-size-16 align-middle"></i>
+                                    </button>
+
+                                    <button type="button" style="background-color: #1d0d64;"
+                                        class="btn text-white  btn-rounded waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target="#deletePropertyModal"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Tenant">
+                                        Delete Tenant
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- end table -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modals -->
+<!-- Block Property Modal -->
+<div class="modal fade" id="blockPropertyModal" tabindex="-1" aria-labelledby="blockPropertyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blockPropertyModalLabel">Suspend Property</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to block this property?Suspending the property means it won't be visible to users
+                and no
+                bookings.The property will only be visible to you! This action can be reversed later.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Susend</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Property Modal -->
+<div class="modal fade" id="deletePropertyModal" tabindex="-1" aria-labelledby="deletePropertyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePropertyModalLabel">Delete Property</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this property? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tooltip Initialization -->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            searching: true, // Enable search functionality
+            ordering: true,  // Enable sorting
+            columnDefs: [{
+                orderable: false, // Make the checkbox column (first column) non-sortable
+                targets: [0, 7] // Set targets for non-sortable columns (first and last)
+            }]
+        });
+    });
+</script>

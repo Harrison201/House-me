@@ -1,0 +1,367 @@
+<style>
+    .image-upload {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .image-upload:hover {
+        background-color: #f1f1f1;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .btn-submit {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+
+
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Add New Property</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Add New Property</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        {{!-- <h5 class="card-title">Total Cateakers <span class="text-muted fw-normal ms-2">(8)</span>
+                        </h5> --}}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!-- Left Column: Property Details -->
+                <div class="col-md-6">
+                    <form method="POST" action="/api/property" enctype="multipart/form-data">
+                        <!-- Property Name -->
+                        <div class="mb-3">
+                            <label for="propertyName" class="form-label">Property Name</label>
+                            <input type="text" class="form-control" id="propertyName" placeholder="Enter property name"
+                                name="property_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="propertyName" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="propertyName"
+                                placeholder="Enter property Location" name="location" required>
+                        </div>
+                        <!-- Property Highlights -->
+                        <h5 class="mt-4">Property Highlights</h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="bedrooms" class="form-label">Bedrooms</label>
+                                <input type="number" class="form-control" id="bedrooms" placeholder="0" min="0"
+                                    name="bedrooms" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="bathrooms" class="form-label">Bathrooms</label>
+                                <input type="number" class="form-control" id="bathrooms" placeholder="0" min="0"
+                                    name="bathrooms" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="kitchens" class="form-label">Kitchens</label>
+                                <input type="number" class="form-control" id="kitchens" placeholder="0" min="0"
+                                    name="kitchens" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="squareFeet" class="form-label">Square Feet</label>
+                                <input type="number" class="form-control" id="squareFeet" placeholder="0" min="0"
+                                    name="square_feet" required>
+                            </div>
+                        </div>
+
+                        <!-- Price & Status -->
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-6">
+                                <label for="propertyPrice" class="form-label">Price ($)</label>
+                                <input type="number" class="form-control" id="propertyPrice" placeholder="Enter price"
+                                    name="price" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="propertyStatus" class="form-label">Status</label>
+                                <select class="form-select" id="propertyStatus" name="status">
+                                    <option value="for_sale">For Sale</option>
+                                    <option value="for_rent">For Rent</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3 mt-4">
+                            <label for="propertyDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="propertyDescription" style="height: 100px;"
+                                name="description" placeholder="Enter property description" required></textarea>
+                        </div>
+
+                        <!-- Property Features -->
+                        {{!-- <h5 class="mt-4">Property Features</h5>
+                        <div class="row gy-3"> <!-- Added gy-3 for vertical spacing -->
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature1">
+                                    <label class="form-check-label" for="feature1">Swimming Pool</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature2">
+                                    <label class="form-check-label" for="feature2">Garage</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature3">
+                                    <label class="form-check-label" for="feature3">Garden</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature4">
+                                    <label class="form-check-label" for="feature4">Gym</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature5">
+                                    <label class="form-check-label" for="feature5">Balcony</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature6">
+                                    <label class="form-check-label" for="feature6">Air Conditioning</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature7">
+                                    <label class="form-check-label" for="feature7">Fireplace</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature8">
+                                    <label class="form-check-label" for="feature8">Security System</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature9">
+                                    <label class="form-check-label" for="feature9">Modern Kitchen</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature10">
+                                    <label class="form-check-label" for="feature10">Walk-in Closet</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature11">
+                                    <label class="form-check-label" for="feature11">Smart Home</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature12">
+                                    <label class="form-check-label" for="feature12">Home Theater</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature13">
+                                    <label class="form-check-label" for="feature13">Solar Panels</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature14">
+                                    <label class="form-check-label" for="feature14">Outdoor BBQ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="feature15">
+                                    <label class="form-check-label" for="feature15">High-speed Internet</label>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        <!-- Submit Button -->
+                        <div class="text-end mt-4">
+                            <button class="btn btn-primary px-4">Submit Property</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column: Image Uploads -->
+                <div class="col-md-6">
+                    <!-- Featured Image Upload -->
+                    <div class="mb-4">
+                        <label for="featuredImage" class="form-label">Featured Image</label>
+                        <div class="image-upload border rounded p-3 text-center"
+                            onclick="document.getElementById('featuredImage').click()" ondrop="handleDrop(event)"
+                            ondragover="handleDragOver(event)">
+                            <p class="mb-0">Drag & drop or click to upload</p>
+                            <input type="file" class="form-control d-none" id="featuredImage" name="featured_image"
+                                accept="image/*" required onchange="handleFileSelect(event)">
+                        </div>
+                        <div id="previewContainer" class="mt-2"></div>
+
+                        <!-- Additional Images Upload -->
+                        {{!-- <div class="mb-4">
+                            <label for="additionalImages" class="form-label">Other Images</label>
+                            <div class="image-upload" onclick="document.getElementById('additionalImages').click()">
+                                <p>Drag & drop or click to upload multiple images</p>
+                                <input type="file" class="form-control d-none" id="additionalImages" accept="image/*"
+                                    multiple>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="deletePropertyModal" tabindex="-1" aria-labelledby="deletePropertyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePropertyModalLabel">Delete Property</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this property? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS (Optional) -->
+<script>
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        previewImage(file);
+    }
+
+    function handleDragOver(event) {
+        event.preventDefault();
+        event.currentTarget.classList.add('bg-light');
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) {
+            document.getElementById('featuredImage').files = event.dataTransfer.files;
+            previewImage(file);
+        }
+    }
+
+    function previewImage(file) {
+        const preview = document.getElementById('previewContainer');
+        if (file) {
+            preview.innerHTML = `
+      <img src="${URL.createObjectURL(file)}" 
+           class="img-thumbnail" 
+           style="max-width: 200px;"
+           alt="Preview">
+      <p class="text-muted mt-1">${file.name}</p>
+    `;
+        }
+    }
+</script>
+{{!--
+<script>
+    // JavaScript for Image Preview (Optional)
+    document.getElementById('featuredImage').addEventListener('change', function (e) {
+        const preview = document.createElement('img');
+        preview.src = URL.createObjectURL(e.target.files[0]);
+        preview.style.maxWidth = '100%';
+        preview.style.marginTop = '10px';
+        preview.style.borderRadius = '5px';
+        e.target.parentNode.appendChild(preview);
+    });
+
+    document.getElementById('additionalImages').addEventListener('change', function (e) {
+        const previewContainer = document.createElement('div');
+        previewContainer.style.marginTop = '10px';
+        Array.from(e.target.files).forEach(file => {
+            const preview = document.createElement('img');
+            preview.src = URL.createObjectURL(file);
+            preview.style.maxWidth = '100%';
+            preview.style.marginRight = '10px';
+            preview.style.borderRadius = '5px';
+            previewContainer.appendChild(preview);
+        });
+        e.target.parentNode.appendChild(previewContainer);
+    });
+</script> --}}
+<script>
+    function previewImage(event) {
+        const preview = document.getElementById('imagePreview');
+        const file = event.target.files[0];
+
+        if (file) {
+            preview.style.display = 'block';
+            preview.src = URL.createObjectURL(file);
+        }
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            searching: true, // Enable search functionality
+            ordering: true,  // Enable sorting
+            columnDefs: [{
+                orderable: false, // Make the checkbox column (first column) non-sortable
+                targets: [0, 7] // Set targets for non-sortable columns (first and last)
+            }]
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.image-uploader').forEach(uploader => {
+        uploader.addEventListener('click', () => {
+            alert('Image uploader clicked! Implement file selection logic.');
+        });
+    });
+</script>

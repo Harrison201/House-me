@@ -1,153 +1,752 @@
-<!DOCTYPE html>
-<html lang="en">
+<section class="halfMap">
+    <div class="halfMap__content">
+        <div class="mainSearch bg-white pr-10 py-10 lg:px-20 lg:pt-5 lg:pb-20 bg-light-2 rounded-4">
+            <div class="button-grid items-center">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title> {{ title }}</title>
-</head>
+                <div class="searchMenu-loc pr-30 pl-20 lg:py-20 lg:px-0 js-form-dd js-liverSearch">
 
-{{!-- <body>
-    <div class="mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold mb-4 text-center h-16">Explore Nearby Properties</h2>
-    <!-- Responsive Google Maps Embed -->
-    <div class="aspect-w-16 aspect-h-12 rounded-lg overflow-hidden shadow-lg">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631584413!3d-37.81627927975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f2c5a1ff%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2ske!4v1696969287378!5m2!1sen!2ske"
-            width="1000" height="800" style="border:0;" allowfullscreen="" loading="lazy"
-            class="w-full h-full"></iframe>
-    </div>
-</div>
+                    <div data-x-dd-click="searchMenu-loc">
+                        <h4 class="text-15 fw-500 ls-2 lh-16">Location</h4>
 
+                        <div class="text-15 text-light-1 ls-2 lh-16">
+                            <input autocomplete="off" type="search" placeholder="London"
+                                class="js-search js-dd-focus" />
+                        </div>
+                    </div>
+                    <div class="searchMenu-loc__field shadow-2 js-popup-window" data-x-dd="searchMenu-loc"
+                        data-x-dd-toggle="-is-active">
+                        <div class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4">
+                            <div class="y-gap-5 js-results">
 
-<div class="container mx-auto p-4">
-    <h2 class="text-xl font-bold mb-4">Locations Near you</h2>
-    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <!-- Card Start -->
-        <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="https://via.placeholder.com/300x200" alt="Apartment Image" class="w-full h-40 object-cover">
-            <div class="p-4">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="font-semibold text-lg">Mitchell Park Plaza Apartments</h3>
-                    <span class="text-blue-500 font-semibold">Ksh 1.2m</span>
+                                <div>
+                                    <button
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option">
+                                        <div class="d-flex">
+                                            <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                            <div class="ml-10">
+                                                <div class="text-15 lh-12 fw-500 js-search-option-target">London</div>
+                                                <div class="text-14 lh-12 text-light-1 mt-5">Greater London, United
+                                                    Kingdom</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <button
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option">
+                                        <div class="d-flex">
+                                            <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                            <div class="ml-10">
+                                                <div class="text-15 lh-12 fw-500 js-search-option-target">New York</div>
+                                                <div class="text-14 lh-12 text-light-1 mt-5">New York State, United
+                                                    States</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <button
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option">
+                                        <div class="d-flex">
+                                            <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                            <div class="ml-10">
+                                                <div class="text-15 lh-12 fw-500 js-search-option-target">Paris</div>
+                                                <div class="text-14 lh-12 text-light-1 mt-5">France</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <button
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option">
+                                        <div class="d-flex">
+                                            <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                            <div class="ml-10">
+                                                <div class="text-15 lh-12 fw-500 js-search-option-target">Madrid</div>
+                                                <div class="text-14 lh-12 text-light-1 mt-5">Spain</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <button
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option">
+                                        <div class="d-flex">
+                                            <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                            <div class="ml-10">
+                                                <div class="text-15 lh-12 fw-500 js-search-option-target">Santorini
+                                                </div>
+                                                <div class="text-14 lh-12 text-light-1 mt-5">Greece</div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <span class="inline-block bg-orange-100 text-orange-500 rounded-full px-3 py-1 text-sm font-medium mb-2">Buy</span>
-                <div class="flex items-center justify-between text-sm text-gray-600 mb-2">
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bed</span>
-                        <span>4 Beds</span>
+
+
+                <div class="searchMenu-date px-30 lg:py-20 lg:px-0 -left js-form-dd js-calendar js-calendar-el">
+
+                    <div data-x-dd-click="searchMenu-date">
+                        <h4 class="text-15 fw-500 ls-2 lh-16">Check in - Check out</h4>
+
+                        <div class="capitalize text-15 text-light-1 ls-2 lh-16">
+                            <span class="js-first-date">Wed 2 Mar</span>
+                            -
+                            <span class="js-last-date">Fri 11 Apr</span>
+                        </div>
                     </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bathtub</span>
-                        <span>4 Baths</span>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">meeting_room</span>
-                        <span>4 Rooms</span>
+
+
+                    <div class="searchMenu-date__field shadow-2" data-x-dd="searchMenu-date"
+                        data-x-dd-toggle="-is-active">
+                        <div class="bg-white px-30 py-30 rounded-4">
+                            <div class="elCalendar js-calendar-el-calendar"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center text-gray-600">
-                        <span class="material-icons text-blue-500">place</span>
-                        <span class="ml-1">778 Panama City, FL</span>
+
+
+                <div class="searchMenu-guests px-30 lg:py-20 lg:px-0 js-form-dd js-form-counters">
+
+                    <div data-x-dd-click="searchMenu-guests">
+                        <h4 class="text-15 fw-500 ls-2 lh-16">Guest</h4>
+
+                        <div class="text-15 text-light-1 ls-2 lh-16">
+                            <span class="js-count-adult">2</span> adults
+                            -
+                            <span class="js-count-child">1</span> childeren
+                            -
+                            <span class="js-count-room">1</span> room
+                        </div>
                     </div>
-                    <button class="bg-red-500 text-white rounded-full px-4 py-1 text-sm font-medium">View</button>
+
+
+                    <div class="searchMenu-guests__field shadow-2" data-x-dd="searchMenu-guests"
+                        data-x-dd-toggle="-is-active">
+                        <div class="bg-white px-30 py-30 rounded-4">
+                            <div class="row y-gap-10 justify-between items-center">
+                                <div class="col-auto">
+                                    <div class="text-15 fw-500">Adults</div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="d-flex items-center js-counter" data-value-change=".js-count-adult">
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-down">
+                                            <i class="icon-minus text-12"></i>
+                                        </button>
+
+                                        <div class="flex-center size-20 ml-15 mr-15">
+                                            <div class="text-15 js-count">2</div>
+                                        </div>
+
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-up">
+                                            <i class="icon-plus text-12"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-top-light mt-24 mb-24"></div>
+
+                            <div class="row y-gap-10 justify-between items-center">
+                                <div class="col-auto">
+                                    <div class="text-15 lh-12 fw-500">Children</div>
+                                    <div class="text-14 lh-12 text-light-1 mt-5">Ages 0 - 17</div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="d-flex items-center js-counter" data-value-change=".js-count-child">
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-down">
+                                            <i class="icon-minus text-12"></i>
+                                        </button>
+
+                                        <div class="flex-center size-20 ml-15 mr-15">
+                                            <div class="text-15 js-count">1</div>
+                                        </div>
+
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-up">
+                                            <i class="icon-plus text-12"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-top-light mt-24 mb-24"></div>
+
+                            <div class="row y-gap-10 justify-between items-center">
+                                <div class="col-auto">
+                                    <div class="text-15 fw-500">Rooms</div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="d-flex items-center js-counter" data-value-change=".js-count-room">
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-down">
+                                            <i class="icon-minus text-12"></i>
+                                        </button>
+
+                                        <div class="flex-center size-20 ml-15 mr-15">
+                                            <div class="text-15 js-count">1</div>
+                                        </div>
+
+                                        <button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-up">
+                                            <i class="icon-plus text-12"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="button-item">
+                    <button class="mainSearch__submit button -dark-1 size-60 col-12 rounded-4 bg-blue-1 text-white">
+                        <i class="icon-search text-20"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- Card End -->
-        <!-- Repeat the Card for more listings -->
-    </div>
-</div>
 
+        <div class="row x-gap-10 y-gap-10 pt-20 pb-20">
+            <div class="col-auto">
 
-
-</body> --}}
-
-
-<body class="bg-gray-100">
-
-<div class="container mx-auto p-4">
-    <!-- Map Section -->
-    <div class="w-full h-96 mb-8">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093683!2d144.9537353156167!3d-37.81720974250942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c7b3f31f20c!2sFlinders%20Street%20Station!5e0!3m2!1sen!2sau!4v1630037654668!5m2!1sen!2sau"
-            class="w-full h-full rounded-lg shadow-lg" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <!-- Locations Section -->
-    <h2 class="text-xl font-bold mb-4">Locations Near you</h2>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <!-- Card Start -->
-        <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="https://via.placeholder.com/300x200" alt="Apartment Image" class="w-full h-40 object-cover">
-            <div class="p-4">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="font-semibold text-lg">Mitchell Park Plaza Apartments</h3>
-                    <span class="text-blue-500 font-semibold">Ksh 1.2m</span>
-                </div>
-                <span class="inline-block bg-orange-100 text-orange-500 rounded-full px-3 py-1 text-sm font-medium mb-2">Buy</span>
-                <div class="flex items-center justify-between text-sm text-gray-600 mb-2">
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bed</span>
-                        <span>4 Beds</span>
+                <div class="dropdown js-dropdown js-placeType-active">
+                    <div class="dropdown__button d-flex items-center text-14 rounded-100 border-light px-15 h-34"
+                        data-el-toggle=".js-placeType-toggle" data-el-toggle-active=".js-placeType-active">
+                        <span class="js-dropdown-title">Type of Place</span>
+                        <i class="icon icon-chevron-sm-down text-7 ml-10"></i>
                     </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bathtub</span>
-                        <span>4 Baths</span>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">meeting_room</span>
-                        <span>4 Rooms</span>
+
+                    <div class="toggle-element -dropdown js-click-dropdown js-placeType-toggle">
+                        <div class="text-15 y-gap-15 js-dropdown-list">
+
+                            <div><a href="#" class="d-block js-dropdown-link">Desert</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">Mountains</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">Ocean</a></div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center text-gray-600">
-                        <span class="material-icons text-blue-500">place</span>
-                        <span class="ml-1">778 Panama City, FL</span>
+
+            </div>
+
+            <div class="col-auto">
+
+                <div class="dropdown js-dropdown js-price-active">
+                    <div class="dropdown__button d-flex items-center text-14 rounded-100 border-light px-15 h-34"
+                        data-el-toggle=".js-price-toggle" data-el-toggle-active=".js-price-active">
+                        <span class="js-dropdown-title">Price</span>
+                        <i class="icon icon-chevron-sm-down text-7 ml-10"></i>
                     </div>
-                    <button class="bg-red-500 text-white rounded-full px-4 py-1 text-sm font-medium">View</button>
+
+                    <div class="toggle-element -dropdown js-click-dropdown js-price-toggle">
+                        <div class="text-15 y-gap-15 js-dropdown-list">
+
+                            <div><a href="#" class="d-block js-dropdown-link">Less than $500</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">$500 - $1000</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">$1000 - $2000</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">$2000+</a></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-auto">
+
+                <div class="relative js-form-dd">
+                    <button class="d-flex items-center px-15 py-5 lh-16 text-14 rounded-100 border-light -dd-button"
+                        data-x-dd-click="dropdownRating">
+                        Guest Rating
+                        <i class="icon icon-chevron-sm-down text-7 ml-15"></i>
+                    </button>
+
+                    <div class="dropRating" data-x-dd="dropdownRating" data-x-dd-toggle="-is-active">
+                        <div class="px-20 py-20 rounded-4 bg-white border-light">
+                            <h5 class="text-18 fw-500 mb-10">Guest Rating</h5>
+
+                            <div class="row x-gap-10 y-gap-10 pt-10">
+
+                                <div class="col-auto">
+                                    <a href="#"
+                                        class="button -blue-1 bg-blue-1-05 text-blue-1 py-10 px-20 rounded-100">1</a>
+                                </div>
+
+                                <div class="col-auto">
+                                    <a href="#"
+                                        class="button -blue-1 bg-blue-1-05 text-blue-1 py-10 px-20 rounded-100">2</a>
+                                </div>
+
+                                <div class="col-auto">
+                                    <a href="#"
+                                        class="button -blue-1 bg-blue-1-05 text-blue-1 py-10 px-20 rounded-100">3</a>
+                                </div>
+
+                                <div class="col-auto">
+                                    <a href="#"
+                                        class="button -blue-1 bg-blue-1-05 text-blue-1 py-10 px-20 rounded-100">4</a>
+                                </div>
+
+                                <div class="col-auto">
+                                    <a href="#"
+                                        class="button -blue-1 bg-blue-1-05 text-blue-1 py-10 px-20 rounded-100">5</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-auto">
+
+                <div class="dropdown js-dropdown js-amenities-active">
+                    <div class="dropdown__button d-flex items-center text-14 rounded-100 border-light px-15 h-34"
+                        data-el-toggle=".js-amenities-toggle" data-el-toggle-active=".js-amenities-active">
+                        <span class="js-dropdown-title">Amenities</span>
+                        <i class="icon icon-chevron-sm-down text-7 ml-10"></i>
+                    </div>
+
+                    <div class="toggle-element -dropdown js-click-dropdown js-amenities-toggle">
+                        <div class="text-15 y-gap-15 js-dropdown-list">
+
+                            <div><a href="#" class="d-block js-dropdown-link">Swimming pool</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">Laundry</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">Outdoor spaces</a></div>
+
+                            <div><a href="#" class="d-block js-dropdown-link">Security</a></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row y-gap-10 justify-between items-center pb-20">
+            <div class="col-auto">
+                <div class="text-18"><span class="fw-500">3,269 properties</span> in Europe</div>
+            </div>
+
+            <div class="col-auto">
+                <button class="button -blue-1 h-40 px-20 rounded-100 bg-blue-1-05 text-15 text-blue-1">
+                    <i class="icon-up-down text-14 mr-10"></i>
+                    Sort
+                </button>
+            </div>
+        </div>
+
+        <div class="row y-gap-20">
+
+            <div class="col-12">
+
+                <div class="border-top-light pt-30">
+                    <div class="row x-gap-20 y-gap-20">
+                        <div class="col-md-auto">
+
+                            <div class="cardImage ratio ratio-1:1 w-200 md:w-1/1 rounded-4">
+                                <div class="cardImage__content">
+
+                                    <img class="rounded-4 col-12" src="img/lists/rental/3/1.png" alt="image">
+
+
+                                </div>
+
+                                <div class="cardImage__wishlist">
+                                    <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                                        <i class="icon-heart text-12"></i>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md">
+                            <div class="d-flex flex-column h-full justify-between">
+                                <div class="">
+                                    <p class="text-14 lh-14 mb-5">Westminster Borough, London</p>
+                                    <h3 class="text-16 lh-16 fw-500">Luxury New Apartment With Private<br> Garden</h3>
+
+                                    <div class="row x-gap-5 items-center pt-5">
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">2 guests</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bedroom</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bed</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row x-gap-10 y-gap-10 pt-20">
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-auto text-right md:text-left">
+                            <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                                <div class="col-auto">
+                                    <div class="text-14 lh-14 fw-500">Exceptional</div>
+                                    <div class="text-14 lh-14 text-light-1">3,014 reviews</div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1">4.8
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-14 text-light-1 mt-20 md:mt-20">From</div>
+                            <div class="text-22 lh-12 fw-600 mt-5">US$72</div>
+                            <div class="text-14 text-light-1 mt-5">per adult</div>
+
+
+                            <a href="#" class="button py-10 px-20 -dark-1 bg-blue-1 text-white mt-10">
+                                View Detail <div class="icon-arrow-top-right ml-15"></div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+
+                <div class="border-top-light pt-30">
+                    <div class="row x-gap-20 y-gap-20">
+                        <div class="col-md-auto">
+
+                            <div class="cardImage ratio ratio-1:1 w-200 md:w-1/1 rounded-4">
+                                <div class="cardImage__content">
+
+                                    <img class="rounded-4 col-12" src="img/lists/rental/3/2.png" alt="image">
+
+
+                                </div>
+
+                                <div class="cardImage__wishlist">
+                                    <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                                        <i class="icon-heart text-12"></i>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md">
+                            <div class="d-flex flex-column h-full justify-between">
+                                <div class="">
+                                    <p class="text-14 lh-14 mb-5">Westminster Borough, London</p>
+                                    <h3 class="text-16 lh-16 fw-500">Luxury New Apartment With Private<br> Garden</h3>
+
+                                    <div class="row x-gap-5 items-center pt-5">
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">2 guests</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bedroom</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bed</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row x-gap-10 y-gap-10 pt-20">
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-auto text-right md:text-left">
+                            <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                                <div class="col-auto">
+                                    <div class="text-14 lh-14 fw-500">Exceptional</div>
+                                    <div class="text-14 lh-14 text-light-1">3,014 reviews</div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1">4.8
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-14 text-light-1 mt-20 md:mt-20">From</div>
+                            <div class="text-22 lh-12 fw-600 mt-5">US$72</div>
+                            <div class="text-14 text-light-1 mt-5">per adult</div>
+
+
+                            <a href="#" class="button py-10 px-20 -dark-1 bg-blue-1 text-white mt-10">
+                                View Detail <div class="icon-arrow-top-right ml-15"></div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+
+                <div class="border-top-light pt-30">
+                    <div class="row x-gap-20 y-gap-20">
+                        <div class="col-md-auto">
+
+                            <div class="cardImage ratio ratio-1:1 w-200 md:w-1/1 rounded-4">
+                                <div class="cardImage__content">
+
+                                    <img class="rounded-4 col-12" src="img/lists/rental/3/3.png" alt="image">
+
+
+                                </div>
+
+                                <div class="cardImage__wishlist">
+                                    <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                                        <i class="icon-heart text-12"></i>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md">
+                            <div class="d-flex flex-column h-full justify-between">
+                                <div class="">
+                                    <p class="text-14 lh-14 mb-5">Westminster Borough, London</p>
+                                    <h3 class="text-16 lh-16 fw-500">Luxury New Apartment With Private<br> Garden</h3>
+
+                                    <div class="row x-gap-5 items-center pt-5">
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">2 guests</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bedroom</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="size-3 rounded-full bg-light-1"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="text-14 text-light-1">1 bed</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row x-gap-10 y-gap-10 pt-20">
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-auto text-right md:text-left">
+                            <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                                <div class="col-auto">
+                                    <div class="text-14 lh-14 fw-500">Exceptional</div>
+                                    <div class="text-14 lh-14 text-light-1">3,014 reviews</div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1">4.8
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-14 text-light-1 mt-20 md:mt-20">From</div>
+                            <div class="text-22 lh-12 fw-600 mt-5">US$72</div>
+                            <div class="text-14 text-light-1 mt-5">per adult</div>
+
+
+                            <a href="#" class="button py-10 px-20 -dark-1 bg-blue-1 text-white mt-10">
+                                View Detail <div class="icon-arrow-top-right ml-15"></div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="border-top-light mt-30 pt-30">
+            <div class="row x-gap-10 y-gap-20 justify-between md:justify-center">
+                <div class="col-auto md:order-1">
+                    <button class="button -blue-1 size-40 rounded-full border-light">
+                        <i class="icon-chevron-left text-12"></i>
+                    </button>
+                </div>
+
+                <div class="col-md-auto md:order-3">
+                    <div class="row x-gap-20 y-gap-20 items-center md:d-none">
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">1</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full bg-dark-1 text-white">2</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">3</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full bg-light-2">4</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">5</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">...</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">20</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row x-gap-10 y-gap-20 justify-center items-center d-none md:d-flex">
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">1</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full bg-dark-1 text-white">2</div>
+
+                        </div>
+
+                        <div class="col-auto">
+
+                            <div class="size-40 flex-center rounded-full">3</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-30 md:mt-10">
+                        <div class="text-14 text-light-1">1 – 20 of 300+ properties found</div>
+                    </div>
+                </div>
+
+                <div class="col-auto md:order-2">
+                    <button class="button -blue-1 size-40 rounded-full border-light">
+                        <i class="icon-chevron-right text-12"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- Card End -->
-
-        <!-- Repeat the Card for more listings -->
-        <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="https://via.placeholder.com/300x200" alt="Apartment Image" class="w-full h-40 object-cover">
-            <div class="p-4">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="font-semibold text-lg">Mitchell Park Plaza Apartments</h3>
-                    <span class="text-blue-500 font-semibold">Ksh 1.2m</span>
-                </div>
-                <span class="inline-block bg-orange-100 text-orange-500 rounded-full px-3 py-1 text-sm font-medium mb-2">Buy</span>
-                <div class="flex items-center justify-between text-sm text-gray-600 mb-2">
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bed</span>
-                        <span>4 Beds</span>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">bathtub</span>
-                        <span>4 Baths</span>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="material-icons">meeting_room</span>
-                        <span>4 Rooms</span>
-                    </div>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center text-gray-600">
-                        <span class="material-icons text-blue-500">place</span>
-                        <span class="ml-1">778 Panama City, FL</span>
-                    </div>
-                    <button class="bg-red-500 text-white rounded-full px-4 py-1 text-sm font-medium">View</button>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
-</body>
-
-</html>
+    <div class="halfMap__map">
+        <div class="map js-map"></div>
+    </div>
+</section>
